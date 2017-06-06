@@ -1,0 +1,35 @@
+class HYPERSHAPE {
+
+  float x; 
+  float y;
+  float rot;
+  float scal = 7;
+  float h;
+
+  HYPERSHAPE(float tempX, float tempY, float tempRot, float tempH) {
+    x = tempX;
+    y = tempY;
+    rot = tempRot;
+    h = tempH;
+  }
+
+  void display() {
+    fill(h, 40, 100);
+    noStroke();
+
+    //translations
+    pushMatrix();
+    translate(x+scal, y+scal);
+    rotate(rot);
+    scale(scal);
+
+    //shape creation
+    beginShape();
+    vertex(1, 0);
+    vertex(3, 3);
+    vertex(2, 5);
+    vertex(0, 2);
+    endShape(CLOSE);
+    popMatrix();
+  }
+}
